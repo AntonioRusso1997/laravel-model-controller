@@ -4,17 +4,23 @@
 
 @section('content')
 <div class="container">
-    <div>
-        <ul>
-            @foreach ($movies as $movie)
-            <li>
-                <h2>Titolo: {{ $movie['title'] }}</h2>
-                <h3>Titolo Originale: {{ $movie['original_title'] }}</h3>
-                <p>Paese: {{ $movie['nationality'] }}</p>
-                <p>data d'uscita: {{ $movie['date'] }}</p>
-                <p>Voto: {{ $movie['vote'] }}</p>
-            </li>
-            @endforeach
-        </ul>
+    <div class="movies-box">        
+        @foreach ($movies as $movie)
+        
+        <div class="card">
+            <a href="{{ route('detail-page', [ 'id' => $movie['id']]) }}">
+                <img src="{{ $movie['path'] }}" alt="">
+                <div class="text-box">
+                    <h2>{{ $movie['title'] }}</h2>
+                </div>
+                <div class="card-hover">
+                    <span>
+                        <i class="fas fa-hand-pointer"></i> INFO
+                    </span>
+                </div>
+            </a>
+        </div>
+        @endforeach        
     </div>
 </div>
+@endsection

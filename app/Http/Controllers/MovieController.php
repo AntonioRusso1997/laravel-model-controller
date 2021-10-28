@@ -12,4 +12,9 @@ class MovieController extends Controller
         $movies = Movie::all();
         return view('home', compact('movies'));
     }
+
+    public function movieDetail($id) {
+        $movie = Movie::find($id);
+        return view('details', compact('movie'));
+    }
 }
