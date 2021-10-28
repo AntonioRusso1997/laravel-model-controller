@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'HomePage')
+@section('title', $movie['title'])
 
 @section('content')
 <div class="container">
